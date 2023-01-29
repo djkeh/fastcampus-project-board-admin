@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>공통 왼쪽 사이드 바</title>
+</head>
+<body>
+  <aside class="main-sidebar sidebar-dark-info elevation-4">
+    <!--/* Brand Logo */-->
+    <a id="admin-logo-link" class="brand-link">
+      <img src="/images/fastcampus-logo.png" alt="Admin Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">게시판 서비스 관리자</span>
+    </a>
+
+    <!--/* Sidebar */-->
+    <div class="sidebar">
+      <!--/* Sidebar user panel (optional) */-->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a id="user-profile" class="d-block">Uno</a>
+        </div>
+      </div>
+
+      <!--/* SidebarSearch Form */-->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search" data-min-length="1">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--/* Sidebar Menu */-->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!--/* Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library */-->
+          <li class="nav-item menu-open">
+            <a id="management-category" class="nav-link">
+              <p>
+                관리
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a id="article-management" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>게시물 관리</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a id="article-comment-management" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>댓글 관리</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a id="user-account-management" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>회원 관리</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item menu-open">
+            <a id="admin-category" class="nav-link">
+              <p>
+                어드민 항목
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a id="admin-members" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>어드민 계정</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!--/* /.sidebar-menu */-->
+    </div>
+    <!--/* /.sidebar */-->
+  </aside>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<thlogic>
+  <attr sel="#layout-main" th:fragment="common_main_table(title, table)" />
+  <attr sel="#main-header-title" th:text="${title}" />
+  <attr sel="#breadcrumb-home" th:href="@{/}" />
+  <attr sel="#breadcrumb-current-page" th:text="${title}" />
+  <attr sel="#card-title" th:text="|${title} 게시판|" />
+  <attr sel="#main-table" th:replace="${table}" />
+</thlogic>
