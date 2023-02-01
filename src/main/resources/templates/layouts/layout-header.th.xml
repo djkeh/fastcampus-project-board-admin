@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<thlogic>
+  <attr sel="#header-nav-home" th:href="@{/}" th:text="'Home'" />
+  <attr sel="#header-nav-admin-members" th:href="@{/admin/members}" th:text="'Member'" />
+</thlogic>

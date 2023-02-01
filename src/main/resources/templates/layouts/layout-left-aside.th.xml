@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<thlogic>
+  <attr sel="#admin-logo-link" th:href="@{/}" />
+  <attr sel="#user-profile" th:href="@{#}" />
+  <attr sel="#management-category" th:classappend="${#request.requestURI.startsWith('/management')} ? 'active'" />
+  <attr
+      sel="#article-management"
+      th:href="@{/management/articles}"
+      th:classappend="${#request.requestURI.equals('/management/articles')} ? 'active'"
+  />
+  <attr
+      sel="#article-comment-management"
+      th:href="@{/management/article-comments}"
+      th:classappend="${#request.requestURI.equals('/management/article-comments')} ? 'active'"
+  />
+  <attr
+      sel="#user-account-management"
+      th:href="@{/management/user-accounts}"
+      th:classappend="${#request.requestURI.equals('/management/user-accounts')} ? 'active'"
+  />
+  <attr sel="#admin-category" th:classappend="${#request.requestURI.startsWith('/admin')} ? 'active'" />
+  <attr
+      sel="#admin-members"
+      th:href="@{/admin/members}"
+      th:classappend="${#request.requestURI.equals('/admin/members')} ? 'active'"
+  />
+</thlogic>

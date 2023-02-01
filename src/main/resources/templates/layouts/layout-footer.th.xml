@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<thlogic>
+  <attr sel="#footer-link" th:href="@{https://github.com/djkeh/fastcampus-project-board-admin}" th:text="'게시판 어드민 프로젝트 GitHub'" />
+  <attr sel="#fastcampus-link" th:href="@{https://fastcampus.co.kr/}" th:text="'FastCampus'" />
+</thlogic>
