@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head id="layout-head">
+  <meta charset="UTF-8">
+  <title>댓글 관리 페이지</title>
+
+  <link rel="stylesheet" href="/js/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/js/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="/js/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <header id="layout-header">헤더 삽입부</header>
+    <aside id="layout-left-aside">왼쪽 사이드 바 삽입부</aside>
+
+    <!-- Main content -->
+    <main id="layout-main">
+      <table id="main-table" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>댓글 내용</th>
+            <th>작성자</th>
+            <th>작성일시</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>테스트 댓글입니다.</td>
+            <td>Uno</td>
+            <td><time datetime="2022-01-01T00:00:00">2022-01-01 00:00:00</time></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>퍼가요~~</td>
+            <td>Uno</td>
+            <td><time datetime="2022-01-02T00:00:00">2022-01-02 00:00:00</time></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>악성 댓글 XXX</td>
+            <td>Uno</td>
+            <td><time datetime="2022-01-03T00:00:00">2022-01-03 00:00:00</time></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>ID</th>
+            <th>댓글 내용</th>
+            <th>작성자</th>
+            <th>작성일시</th>
+          </tr>
+        </tfoot>
+      </table>
+    </main>
+    <!-- /.content -->
+
+    <aside id="layout-right-aside">오른쪽 사이드 바 삽입부</aside>
+    <footer id="layout-footer">푸터 삽입부</footer>
+  </div>
+
+  <!--/* REQUIRED SCRIPTS */-->
+  <script id="layout-scripts">/* 공통 스크립트 삽입부 */</script>
+
+  <!--/* 페이지 전용 스크립트 */-->
+  <script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/js/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/js/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="/js/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="/js/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="/js/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="/js/plugins/jszip/jszip.min.js"></script>
+  <script src="/js/plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="/js/plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="/js/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="/js/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="/js/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <script>
+    $(function () {
+      $("#main-table").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        "pageLength": 10
+      }).buttons().container().appendTo('#main-table_wrapper .col-md-6:eq(0)'); // main-table_wrapper ID는 플러그인에 의해 자동 생성됨
+    });
+  </script>
+</body>
+</html>
