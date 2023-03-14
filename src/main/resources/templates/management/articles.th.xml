@@ -4,6 +4,7 @@
   <attr sel="#layout-header" th:replace="layouts/layout-header :: header" />
   <attr sel="#layout-left-aside" th:replace="layouts/layout-left-aside :: aside" />
   <attr sel="#layout-main" th:replace="layouts/layout-main-table :: common_main_table('게시글 관리', (~{::#main-table} ?: ~{}))" />
+  <attr sel="#layout-modal" th:replace="layouts/layout-main-table-modal :: .modal" />
   <attr sel="#layout-right-aside" th:replace="layouts/layout-right-aside :: aside" />
   <attr sel="#layout-footer" th:replace="layouts/layout-footer :: footer" />
   <attr sel="#layout-scripts" th:replace="layouts/layout-scripts :: script" />
