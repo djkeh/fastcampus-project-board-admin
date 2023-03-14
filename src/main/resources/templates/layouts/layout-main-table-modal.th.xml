@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<thlogic>
+  <!--/* 실제 url 주입은 javascript에 의해 동적으로 이루어져야 한다. th:action은 해당 form에 csrf 토큰을 자동으로 세팅하는데 사용됨. */-->
+  <attr sel=".modal-footer/form" th:action="@{#}" th:method="post" />
+</thlogic>
