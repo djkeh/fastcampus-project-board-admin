@@ -1,7 +1,6 @@
 package com.fastcampus.projectboardadmin.controller;
 
-import com.fastcampus.projectboardadmin.config.SecurityConfig;
-import com.fastcampus.projectboardadmin.domain.constant.RoleType;
+import com.fastcampus.projectboardadmin.config.TestSecurityConfig;
 import com.fastcampus.projectboardadmin.dto.ArticleCommentDto;
 import com.fastcampus.projectboardadmin.dto.UserAccountDto;
 import com.fastcampus.projectboardadmin.service.ArticleCommentManagementService;
@@ -16,7 +15,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 import static org.mockito.BDDMockito.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
@@ -25,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 댓글 관리")
-@Import(SecurityConfig.class)
+@Import(TestSecurityConfig.class)
 @WebMvcTest(ArticleCommentManagementController.class)
 class ArticleCommentManagementControllerTest {
 
