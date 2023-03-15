@@ -7,4 +7,5 @@
   <attr sel="#card-title" th:text="|${title} 게시판|" />
   <attr sel="#main-table" th:replace="${table}" />
   <attr sel="#layout-card-todolist" th:replace="layouts/layout-card-todolist :: #layout-card-todolist" />
+  <attr sel="#layout-card-chat" th:replace="layouts/layout-card-chat :: #layout-card-chat" />
 </thlogic>

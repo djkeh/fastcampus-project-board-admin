@@ -12,6 +12,11 @@
   <script src="/js/layout-main-table.js"></script>
   <script src="/js/todolist.js"></script>
 
+  <!-- 채팅용 스크립트 -->
+  <script src="/webjars/sockjs-client/1.0.2/sockjs.min.js"></script>
+  <script src="/webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
+  <script src="/js/app.js"></script>
+
   <script>
     $(document).ready(() => {
       if (sessionStorage.getItem('darkMode') === "true") {
@@ -48,6 +53,18 @@
         $('.modal-body pre').removeClass('text-light');
         sessionStorage.setItem('darkMode', "false");
       }
+    });
+  </script>
+  <script>
+    $(document).ready(() => {
+      const socket = new SockJS('/chat');
+      stompClient = Stomp.over(socket);
+      stompClient.connect({}, function (frame) {
+        console.log('Chat connected: ' + frame);
+        stompClient.subscribe('/topic/chat', function (webSocketMessage) {
+          respondMessage(JSON.parse(webSocketMessage.body).content);
+        });
+      });
     });
   </script>
 </body>

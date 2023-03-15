@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>공통 카드 (Direct Chat)</title>
+</head>
+<body>
+  <!-- DIRECT CHAT -->
+  <div class="card direct-chat direct-chat-primary" id="layout-card-chat">
+    <div class="card-header">
+      <h3 class="card-title">Direct Chat</h3>
+
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <!-- Conversations are loaded here -->
+      <div class="direct-chat-messages">
+        <!-- Message. Default to the left -->
+      </div>
+      <!--/.direct-chat-messages-->
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+      <form id="chat-form">
+        <div class="input-group">
+          <label for="input-message"></label>
+          <input id="input-message" type="text" name="message" placeholder="Type Message ..." class="form-control">
+          <span class="input-group-append">
+          <button type="button" class="btn btn-primary">Send</button>
+        </span>
+        </div>
+      </form>
+    </div>
+    <!-- /.card-footer-->
+  </div>
+  <!--/.direct-chat -->
+</body>
+</html>
