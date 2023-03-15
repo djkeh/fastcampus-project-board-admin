@@ -27,19 +27,19 @@
         <tbody>
           <tr>
             <td>1</td>
-            <td>테스트 댓글입니다.</td>
+            <td><a data-toggle="modal" data-target="#layout-modal">테스트 댓글입니다.</a></td>
             <td>Uno</td>
             <td><time datetime="2022-01-01T00:00:00">2022-01-01 00:00:00</time></td>
           </tr>
           <tr>
             <td>2</td>
-            <td>퍼가요~~</td>
+            <td><a data-toggle="modal" data-target="#layout-modal">퍼가요~~</a></td>
             <td>Uno</td>
             <td><time datetime="2022-01-02T00:00:00">2022-01-02 00:00:00</time></td>
           </tr>
           <tr>
             <td>3</td>
-            <td>악성 댓글 XXX</td>
+            <td><a data-toggle="modal" data-target="#layout-modal">악성 댓글 XXX</a></td>
             <td>Uno</td>
             <td><time datetime="2022-01-03T00:00:00">2022-01-03 00:00:00</time></td>
           </tr>
@@ -55,6 +55,9 @@
       </table>
     </main>
     <!-- /.content -->
+
+    <div class="modal fade" id="layout-modal"></div>
+    <!-- /.modal -->
 
     <aside id="layout-right-aside">오른쪽 사이드 바 삽입부</aside>
     <footer id="layout-footer">푸터 삽입부</footer>
@@ -83,6 +86,24 @@
         "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
         "pageLength": 10
       }).buttons().container().appendTo('#main-table_wrapper .col-md-6:eq(0)'); // main-table_wrapper ID는 플러그인에 의해 자동 생성됨
+    });
+  </script>
+  <script>
+    $(document).ready(() => {
+      $('#layout-modal').on('show.bs.modal', (event) => {
+        const id = $(event.relatedTarget).data('id');
+
+        fetch(`/management/article-comments/${id}`)
+            .then(response => response.json())
+            .then(data => {
+              $('.modal-title').text('댓글 내용');
+              $('.modal-body pre').text(data.content);
+              $('.modal-footer form').attr('action', `/management/article-comments/${id}`);
+            })
+            .catch(error => {
+              console.error('댓글 로딩 실패: ', error);
+            });
+      });
     });
   </script>
 </body>

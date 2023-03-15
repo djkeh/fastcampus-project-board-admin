@@ -4,7 +4,26 @@
   <attr sel="#layout-header" th:replace="layouts/layout-header :: header" />
   <attr sel="#layout-left-aside" th:replace="layouts/layout-left-aside :: aside" />
   <attr sel="#layout-main" th:replace="layouts/layout-main-table :: common_main_table('댓글 관리', (~{::#main-table} ?: ~{}))" />
+  <attr sel="#layout-modal" th:replace="layouts/layout-main-table-modal :: .modal" />
   <attr sel="#layout-right-aside" th:replace="layouts/layout-right-aside :: aside" />
   <attr sel="#layout-footer" th:replace="layouts/layout-footer :: footer" />
   <attr sel="#layout-scripts" th:replace="layouts/layout-scripts :: script" />
+
+  <attr sel="#main-table">
+    <attr sel="thead/tr">
+      <attr sel="th[0]" th:text="'ID'" />
+      <attr sel="th[1]" th:text="'댓글 내용'" />
+      <attr sel="th[2]" th:text="'작성자'" />
+      <attr sel="th[3]" th:text="'작성일시'" />
+    </attr>
+
+    <attr sel="tbody" th:remove="all-but-first">
+      <attr sel="tr[0]" th:each="comment : ${comments}">
+        <attr sel="td[0]" th:text="${comment.id}" />
+        <attr sel="td[1]/a" th:text="${comment.content}" th:href="@{#}" th:data-id="${comment.id}" />
+        <attr sel="td[2]" th:text="${comment.userAccount.nickname}" />
+        <attr sel="td[3]/time" th:datetime="${comment.createdAt}" th:text="${#temporals.format(comment.createdAt, 'yyyy-MM-dd HH:mm:ss')}" />
+      </attr>
+    </attr>
+  </attr>
 </thlogic>
