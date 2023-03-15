@@ -7,4 +7,55 @@
   <attr sel="#layout-right-aside" th:replace="layouts/layout-right-aside :: aside" />
   <attr sel="#layout-footer" th:replace="layouts/layout-footer :: footer" />
   <attr sel="#layout-scripts" th:replace="layouts/layout-scripts :: script" />
+
+  <attr sel="#jsgrid-javascript" th:utext='|
+    $(() => {
+      const csrfHeader = "${_csrf.headerName}";
+      const csrfToken = "${_csrf.token}";
+
+      $("#jsgrid-admin-members").jsGrid({
+        width: "100%",
+
+        autoload: true,
+        inserting: false,
+        editing: false,
+        sorting: true,
+        paging: false,
+        confirmDeleting: true,
+        deleteConfirm: "선택하신 어드민 계정을 삭제하시겠습니까?",
+
+        fields: [
+          { name: "userId", title: "유저 ID", type: "text", width: 70 },
+          { name: "nickname", title: "닉네임", type: "text", width: 60 },
+          { name: "email", title: "이메일", type: "text", width: 120 },
+          { name: "memo", title: "메모", type: "text", width: 150 },
+          { name: "roleTypes", title: "권한", type: "text", width: 100 },
+          { name: "createdBy", title: "작성자", type: "text", width: 60 },
+          { name: "createdAt", title: "작성일시", type: "text", width: 100 },
+          { type: "control" }
+        ],
+
+        controller: {
+          loadData: (filter) => {
+            return $.ajax({
+              type: "GET",
+              url: "/api/admin/members",
+              data: filter,
+              dataType: "json"
+            });
+          },
+          insertItem: $.noop,
+          updateItem: $.noop,
+          deleteItem: (item) => {
+            return $.ajax({
+              type: "DELETE",
+              url: "/api/admin/members/" + item.userId,
+              data: item,
+              beforeSend: (xhr) => xhr.setRequestHeader(csrfHeader, csrfToken)
+            });
+          },
+        }
+      });
+    });
+  |'/>
 </thlogic>
