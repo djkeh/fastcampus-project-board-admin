@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>공통 카드 (Todo List)</title>
+</head>
+<body>
+  <div class="card col-6" id="layout-card-todolist">
+    <div class="card-header">
+      <h3 class="card-title">
+        <i class="ion ion-clipboard mr-1"></i>
+        To Do List
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <ul class="todo-list" data-widget="todo-list">
+        <li>
+          <!-- drag handle -->
+          <span class="handle">
+            <i class="fas fa-ellipsis-v"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </span>
+          <!-- checkbox -->
+          <div  class="icheck-primary d-inline ml-2">
+            <input type="checkbox" value="" name="todo1" id="todoCheck1">
+            <label for="todoCheck1"></label>
+          </div>
+          <!-- todo text -->
+          <span class="text">할 일</span>
+          <!-- General tools such as edit or delete-->
+          <div class="tools">
+            <i class="fas fa-edit"></i>
+            <i class="fas fa-trash-o"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer input-group mb-3 clearfix">
+      <label for="todo-input"></label>
+      <input id="todo-input" type="text" class="form-control">
+      <span class="input-group-append">
+        <button id="todo-button" type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
+      </span>
+    </div>
+  </div>
+  <!-- /.card -->
+</body>
+</html>
