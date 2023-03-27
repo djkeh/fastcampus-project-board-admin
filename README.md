@@ -18,15 +18,16 @@
 Spring Boot
 
 * Spring Boot Actuator
-* Spring Web
 * Spring Data JPA
-* Thymeleaf
-* Spring Security
 * Spring Security OAuth 2 Client
-* H2 Database
-* MySQL Driver
+* Spring Security
+* Thymeleaf
+* Spring Web
+* Spring WebSocket
 * Lombok
 * Spring Boot DevTools
+* H2 Database
+* MySQL Driver
 * Spring Configuration Processor
 
 그 외
