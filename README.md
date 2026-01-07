@@ -1,6 +1,6 @@
 # 어드민 서비스 - 패스트캠퍼스, 10개 프로젝트로 완성하는 백엔드 웹개발
 
-[![GitKraken shield](https://img.shields.io/badge/GitKraken-Legendary%20Git%20Tools-teal?style=plastic&logo=gitkraken)](http://gitkraken.link/uno)
+[![GitKraken shield](https://img.shields.io/badge/GitKraken-Legendary%20Git%20Tools-teal?style=plastic&logo=gitkraken)](https://gitkraken.cello.so/rcr7uWnNUdm)
 
 게시판 서비스의 관리 도구를 개발해보는 프로젝트입니다. 2022년 6월 기준 가장 최신의 스프링 부트와 관련 기술들, 자바 17 기능들, 개발 도구들을 경험할 수 있도록 만들어졌습니다.
 
